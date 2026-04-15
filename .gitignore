@@ -1,0 +1,25 @@
+# Godot
+.import/
+.export/
+.godot/
+
+# Mono / C#
+.mono/
+data_*/
+*.csproj
+*.sln
+*.user
+
+# Build
+bin/
+obj/
+
+# VSCode
+.vscode/
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
