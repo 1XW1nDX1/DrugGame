@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://fuk3vr1s5a48"]
+
+[node name="Main" type="Node2D" unique_id=1875083353]
+
+[node name="GameManager" type="Node" parent="." unique_id=1079396126]
+
+[node name="TurnManager" type="Node" parent="." unique_id=1035159902]
+
+[node name="Background" type="TextureRect" parent="." unique_id=517468491]
+offset_left = 823.0
+offset_top = 149.0
+offset_right = 863.0
+offset_bottom = 189.0
+
+[node name="TopBar" type="PanelContainer" parent="." unique_id=495894067]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LeftMenu" type="VBoxContainer" parent="." unique_id=409387471]
+offset_right = 144.0
+offset_bottom = 648.0
+
+[node name="BtnResearch" type="Button" parent="LeftMenu" unique_id=1912340425]
+layout_mode = 2
+
+[node name="BtnApproval" type="Button" parent="LeftMenu" unique_id=157845397]
+layout_mode = 2
+
+[node name="BtnProduction" type="Button" parent="LeftMenu" unique_id=1534385876]
+layout_mode = 2
+
+[node name="BtnStats" type="Button" parent="LeftMenu" unique_id=79111466]
+layout_mode = 2
+
+[node name="CenterDesk" type="PanelContainer" parent="." unique_id=710280586]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ResearchPanel" type="PanelContainer" parent="CenterDesk" unique_id=1448566258]
+layout_mode = 2
+
+[node name="ApprovalPanel" type="PanelContainer" parent="CenterDesk" unique_id=2102230051]
+layout_mode = 2
+
+[node name="ProductionPanel" type="PanelContainer" parent="CenterDesk" unique_id=2056005648]
+layout_mode = 2
+
+[node name="StatsPanel" type="PanelContainer" parent="CenterDesk" unique_id=66407855]
+layout_mode = 2
+
+[node name="NextDayButton" type="Button" parent="." unique_id=587268016]
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="MainUI" type="Node" parent="." unique_id=1471005090]
+
+[node name="FadeOverlay" type="ColorRect" parent="." unique_id=505132438]
+offset_left = 440.0
+offset_top = 239.0
+offset_right = 480.0
+offset_bottom = 279.0
