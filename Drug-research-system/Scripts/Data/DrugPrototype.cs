@@ -15,4 +15,8 @@ public class DrugPrototype
 	public float Stability { get; set; }
 
 	public float SideEffectIntensity { get; set; }
+
+	public float MassProductionCost { get; set; }
+
+	public float HiddenRisk { get; set; }
 }
