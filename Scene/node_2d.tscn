@@ -1,0 +1,93 @@
+[gd_scene format=3 uid="uid://2sohq311vwtm"]
+
+[ext_resource type="Script" uid="uid://dfusrejfy35s8" path="res://Scripts/LineManage.cs" id="1_gj2p5"]
+[ext_resource type="Script" uid="uid://ciek72dudlmob" path="res://Scripts/ProductionLine.cs" id="2_l42dj"]
+[ext_resource type="Script" uid="uid://bd6qa53btlat3" path="res://Scripts/Drug.cs" id="3_60wmb"]
+[ext_resource type="Script" uid="uid://b586foy6nrhr5" path="res://Scripts/LineUI.cs" id="3_irwgg"]
+[ext_resource type="Script" uid="uid://byqmwuo4lygqu" path="res://Scripts/DrugUI.cs" id="4_l42dj"]
+[ext_resource type="Script" uid="uid://c78yx564aux07" path="res://Scripts/GameManager.cs" id="5_60wmb"]
+[ext_resource type="Script" uid="uid://7xco455gacba" path="res://Scripts/ShowNumber.cs" id="7_xvxua"]
+
+[node name="Node2D" type="Node2D" unique_id=1119170112]
+
+[node name="drug1" type="Node2D" parent="." unique_id=1263396982]
+script = ExtResource("3_60wmb")
+
+[node name="Lines" type="Node2D" parent="." unique_id=2051701721]
+
+[node name="line1" type="Node2D" parent="Lines" unique_id=252762759]
+script = ExtResource("2_l42dj")
+
+[node name="line2" type="Node2D" parent="Lines" unique_id=150721751]
+script = ExtResource("2_l42dj")
+
+[node name="line3" type="Node2D" parent="Lines" unique_id=362424610]
+script = ExtResource("2_l42dj")
+
+[node name="line4" type="Button" parent="Lines" unique_id=1827665303 node_paths=PackedStringArray("productionLine", "gameManager")]
+offset_left = 546.0
+offset_top = 28.0
+offset_right = 777.0
+offset_bottom = 104.0
+text = "生产线1"
+script = ExtResource("3_irwgg")
+productionLine = NodePath("../line1")
+gameManager = NodePath("../../GameManager")
+
+[node name="line5" type="Button" parent="Lines" unique_id=1039600428 node_paths=PackedStringArray("productionLine", "gameManager")]
+offset_left = 549.0
+offset_top = 151.0
+offset_right = 784.0
+offset_bottom = 226.0
+text = "生产线2
+"
+script = ExtResource("3_irwgg")
+productionLine = NodePath("../line2")
+gameManager = NodePath("../../GameManager")
+
+[node name="line6" type="Button" parent="Lines" unique_id=1733344957 node_paths=PackedStringArray("productionLine", "gameManager")]
+offset_left = 555.0
+offset_top = 270.0
+offset_right = 784.0
+offset_bottom = 346.0
+text = "生产线3"
+script = ExtResource("3_irwgg")
+productionLine = NodePath("../line3")
+gameManager = NodePath("../../GameManager")
+
+[node name="Linemanager" type="Node2D" parent="." unique_id=598937719 node_paths=PackedStringArray("ProductionLines")]
+script = ExtResource("1_gj2p5")
+ProductionLines = [NodePath("../Lines/line1"), NodePath("../Lines/line2"), NodePath("../Lines/line3")]
+
+[node name="Drug1" type="Button" parent="." unique_id=2142444225 node_paths=PackedStringArray("drug")]
+offset_left = 121.0
+offset_top = 130.0
+offset_right = 320.0
+offset_bottom = 200.0
+text = "药物1"
+script = ExtResource("4_l42dj")
+drug = NodePath("../drug1")
+
+[node name="drug2" type="Node2D" parent="." unique_id=1144090560]
+script = ExtResource("3_60wmb")
+
+[node name="drug3" type="Node2D" parent="." unique_id=1599001828]
+script = ExtResource("3_60wmb")
+
+[node name="GameManager" type="Node2D" parent="." unique_id=1809619756 node_paths=PackedStringArray("Lines", "drug_UI")]
+script = ExtResource("5_60wmb")
+Lines = [NodePath("../Lines/line4"), NodePath("../Lines/line5"), NodePath("../Lines/line6")]
+drug_UI = NodePath("../Drug1")
+
+[node name="Label" type="Label" parent="." unique_id=1062469210 node_paths=PackedStringArray("drug")]
+offset_left = 825.0
+offset_top = 38.0
+offset_right = 1076.0
+offset_bottom = 101.0
+script = ExtResource("7_xvxua")
+drug = NodePath("../drug1")
+
+[connection signal="pressed" from="Lines/line4" to="GameManager" method="Line_Choosed"]
+[connection signal="pressed" from="Lines/line5" to="GameManager" method="Line_Choosed"]
+[connection signal="pressed" from="Lines/line6" to="GameManager" method="Line_Choosed"]
+[connection signal="pressed" from="Drug1" to="GameManager" method="Drug_Choosed"]
